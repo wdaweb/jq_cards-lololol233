@@ -70,7 +70,7 @@
       }
       // 將全部的紙牌（背面）都放到頁面上
       for (let i = 0; i < $(".card").length; i++) {
-        const num = (i % ($(".card").length / 2)) + 1;
+        const num = (i % ($(".card").length / 1)) + 1;
         $(".card")
           .eq(i)
           .find(".card-front")
@@ -92,8 +92,8 @@
 
         if ($(".card:not(.card-close)").length === 2) {
           if (
-            $(".card:not(.card-close)").eq(0).attr("data-num") ===
-            $(".card:not(.card-close)").eq(1).attr("data-num")
+            parseInt($(".card:not(.card-close)").eq(0).attr("data-num")) + 8 ===
+            parseInt($(".card:not(.card-close)").eq(1).attr("data-num"))
           ) {
             $(".card:not(.card-close)").addClass("card-ok");
             $(".card:not(.card-close)").fadeTo(3000, 0);
